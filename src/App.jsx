@@ -8,10 +8,9 @@ import { useState } from "react";
 function App() {
   const [user, setUser] = useState(null);
 
-
   // This Handles user authentication by checking credentials against local records.
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == '123') {
+    if (email == "admin@me.com" && password == "123") {
       setUser("admin");
     } else if (email == "user@me.com" && password == "123") {
       setUser("employee");
@@ -22,14 +21,10 @@ function App() {
 
   return (
     <>
-       {!user ? <Login handleLogin={handleLogin} /> : ''}
+      {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "admin" && <AdminDashboard />}
-    
-    {/* 3. If the user is an employee, show Employee Dashboard */}
-    {user === "employee" && <EmployeeDashboard />}
-      
-      {/* <EmployeeDashboard/> */}
-      {/* <AdminDashboard/> */}
+
+      {user === "employee" && <EmployeeDashboard />}
     </>
   );
 }
