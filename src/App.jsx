@@ -8,6 +8,8 @@ import { useState } from "react";
 function App() {
   const [user, setUser] = useState(null);
 
+
+  // This Handles user authentication by checking credentials against local records.
   const handleLogin = (email, password) => {
     if (email == "admin@me.com" && password == '123') {
       setUser("admin");
